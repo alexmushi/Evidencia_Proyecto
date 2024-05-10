@@ -29,6 +29,9 @@ def drawo(x, y):
 def floor(value):
     return ((value + 200) // 133) * 133 - 200
 
+# Diccionario para rastrear el estado de cada celda
+board = {}
+
 # Estado inicial del juego, indicando quién es el jugador actual (0 = X, 1 = O)
 state = {'player': 0}
 players = [drawx, drawo]  # Lista de funciones de dibujo para cada jugador
@@ -37,6 +40,10 @@ players = [drawx, drawo]  # Lista de funciones de dibujo para cada jugador
 def tap(x, y):
     x = floor(x)  # Normaliza la coordenada x
     y = floor(y)  # Normaliza la coordenada y
+    key = (x, y)  # Crea una tupla con las coordenadas normalizadas 
+    if key in board:
+        return  # Si la celda está ocupada, no hace nada
+    board[key] = state['player']  # Guarda el jugador en la celda
     player = state['player']  # Obtiene el jugador actual
     draw = players[player]  # Obtiene la función de dibujo del jugador actual
     draw(x, y)  # Dibuja la marca en la posición clickeada
