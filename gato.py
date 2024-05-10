@@ -1,5 +1,5 @@
 # Importa funciones específicas de la biblioteca 'turtle' y un método 'line' de 'freegames'
-from turtle import *
+from turtle import color, up, down, goto, circle, setup, hideturtle, tracer, update, onscreenclick, done
 from freegames import line
 
 # Define una función para dibujar la cuadrícula del juego de gato
@@ -11,11 +11,13 @@ def grid():
     line(-200, -67, 200, -67)
     line(-200, 67, 200, 67)
 
+
 # Define la función para dibujar una 'X' en la posición (x, y)
 def drawx(x, y):
     color('red')  # Establece el color del lápiz a rojo
     line(x + 17, y + 17, x + 117, y + 117)
     line(x + 17, y + 117, x + 117, y + 17)
+
 
 # Define la función para dibujar un 'O' en la posición (x, y)
 def drawo(x, y):
@@ -25,9 +27,11 @@ def drawo(x, y):
     down()
     circle(50)
 
+
 # Función para normalizar las coordenadas de los clics a la cuadrícula del juego
 def floor(value):
     return ((value + 200) // 133) * 133 - 200
+
 
 # Diccionario para rastrear el estado de cada celda
 board = {}
@@ -40,7 +44,7 @@ players = [drawx, drawo]  # Lista de funciones de dibujo para cada jugador
 def tap(x, y):
     x = floor(x)  # Normaliza la coordenada x
     y = floor(y)  # Normaliza la coordenada y
-    key = (x, y)  # Crea una tupla con las coordenadas normalizadas 
+    key = (x, y)  # Crea una tupla con las coordenadas normalizadas
     if key in board:
         return  # Si la celda está ocupada, no hace nada
     board[key] = state['player']  # Guarda el jugador en la celda
