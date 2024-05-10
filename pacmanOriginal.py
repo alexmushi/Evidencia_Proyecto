@@ -14,12 +14,12 @@ writer = Turtle(visible=False)
 aim = vector(5, 0)
 pacman = vector(-40, -80)
 
-# Lista de fantasmas con sus posiciones iniciales y direcciones
+# Aumentar la velocidad de los fantasmas
 ghosts = [
-    [vector(-180, 160), vector(5, 0)],  # Primer fantasma
-    [vector(-180, -160), vector(0, 5)],  # Segundo fantasma
-    [vector(100, 160), vector(0, -5)],  # Tercer fantasma
-    [vector(100, -160), vector(-5, 0)],  # Cuarto fantasma
+    [vector(-180, 160), vector(10, 0)],  # Velocidad duplicada
+    [vector(-180, -160), vector(0, 10)],
+    [vector(100, 160), vector(0, -10)],
+    [vector(100, -160), vector(-10, 0)],
 ]
 
 # Nueva estructura de tiles (tablero)
