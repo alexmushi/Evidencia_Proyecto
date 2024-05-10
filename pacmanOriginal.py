@@ -1,6 +1,6 @@
 # Importaciones específicas desde turtle
-from turtle import (bgcolor, clear, done, dot, goto, hideturtle, listen, onkey,
-                    ontimer, setup, tracer, Turtle, up, update)
+from turtle import (bgcolor, clear, done, dot, goto, hideturtle, listen,
+                    onkey, ontimer, setup, tracer, Turtle, up, update)
 
 # Importar otras librerías necesarias
 from random import choice
@@ -49,6 +49,7 @@ tiles = [
 ]
 
 # Dibuja un cuadrado en la posición (x, y)
+
 def square(x, y):
     """Dibuja un cuadrado usando el path en (x, y)."""
     path.up()
