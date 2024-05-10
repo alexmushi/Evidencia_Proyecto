@@ -14,16 +14,16 @@ def grid():
 # Define la función para dibujar una 'X' en la posición (x, y)
 def drawx(x, y):
     color('red')  # Establece el color del lápiz a rojo
-    line(x, y, x + 133, y + 133)
-    line(x, y + 133, x + 133, y)
+    line(x + 17, y + 17, x + 117, y + 117)
+    line(x + 17, y + 117, x + 117, y + 17)
 
 # Define la función para dibujar un 'O' en la posición (x, y)
 def drawo(x, y):
     color('blue')  # Establece el color del lápiz a azul
     up()  # Levanta el lápiz para no dibujar mientras se mueve
-    goto(x + 67, y + 5)  # Mueve el lápiz a la posición inicial para el círculo
-    down()  # Baja el lápiz para empezar a dibujar
-    circle(62)  # Dibuja un círculo de radio 62
+    goto(x + 67, y + 17)
+    down()
+    circle(50)
 
 # Función para normalizar las coordenadas de los clics a la cuadrícula del juego
 def floor(value):
