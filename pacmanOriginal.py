@@ -1,15 +1,18 @@
 # Importaciones específicas desde turtle
-from turtle import (bgcolor, clear, done, dot, goto, hideturtle, listen,
-                    onkey, ontimer, setup, tracer, Turtle, up, update)
+from turtle import (
+    bgcolor, clear, done, dot, goto, hideturtle, listen, onkey, ontimer,
+    setup, tracer, Turtle, up, update
+)
 
 # Importar otras librerías necesarias
 from random import choice
-from freegames import floor, vector
+from freegames import floor, vector  # type: ignore
 
 # Estado inicial del juego: Puntaje inicia en 0
 state = {'score': 0}
 
-# Inicializa dos instancias de Turtle para dibujar el camino y escribir el puntaje
+# Inicializa dos instancias de Turtle para dibujar el camino y escribir el
+# puntaje
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
 
@@ -49,6 +52,7 @@ tiles = [
 ]
 
 # Dibuja un cuadrado en la posición (x, y)
+
 
 def square(x, y):
     """Dibuja un cuadrado usando el path en (x, y)."""
